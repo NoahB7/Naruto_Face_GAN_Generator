@@ -1,0 +1,34 @@
+<!doctype html>
+
+
+<html>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+            $(function() {
+            $('a#test').on('click', function(e) {
+                e.preventDefault()
+                $.getJSON('/getimage',
+                    function(data) {
+                //refresh page
+                });
+                location.reload();
+                return false;
+            });
+            });
+    </script>
+
+
+  <head>
+      <title>Naruto Face Generator</title>
+  </head>
+   <body>
+    <div style="width:40%; margin:auto; padding:10px;display: flex; align-items: center;justify-content: center;">
+        <form>
+            <a href=# id=test><button class='btn btn-default'>generate new face</button></a>
+        </form>
+    </div>
+    <div style="width:40%; margin:auto; padding:10px;display: flex;align-items: center;justify-content: center;">
+        <img src="{{ url_for('static', filename='out1.jpg') }}" width="400", height = "400" />
+    </div>
+   </body>
+</html>
